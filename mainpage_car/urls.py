@@ -8,3 +8,4 @@ urlpatterns = [
     path('car/<int:pk>', detail_views, name='detailpage')
 
 ]
+
