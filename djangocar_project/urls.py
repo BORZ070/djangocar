@@ -8,5 +8,5 @@ urlpatterns = [
     path('', include('mainpage_car.urls', namespace='mainpage_car'))
 ]
 
-if settings.DEBUG is False:
+if settings.DEBUG is True:
     urlpatterns = static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
