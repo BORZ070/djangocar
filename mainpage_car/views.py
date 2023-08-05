@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from mainpage_car.models import Car
 
+
 def main_views(request):
     cars = Car.objects.all()
     return render(request, 'index.html', {'cars': cars})
