@@ -1,1 +1,1 @@
-for i in x
+def views(request, pk)
