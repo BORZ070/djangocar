@@ -1,0 +1,45 @@
+{% extends 'base_new.html' %}
+{% load static %}
+
+{% block content %}
+
+
+
+  <!-- ======= Features Section ======= -->
+  <section id="features" class="features">
+    <div class="container">
+      <div class="row d-flex justify-content-center">
+        {% for car in cars %}
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="card">
+            <a href="{% url 'mainpage_car:detailpage' car.id %}"><img src="{{ car.photo.url }}" class="card-img-top" alt="..."></a>
+            <div class="card-body">
+               <h5 class="card-title">{{ car.brand }}</h5>
+            <h5 class="card-title">{{ car.model }}</h5>
+            <p class="card-text">{{ car.generation }}</p>
+            <p class="card-text">{{ car.info|truncatewords:20 }}</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        <div class="col-lg-12 d-flex justify-content-center">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .btn-custom {
+      background-color: #fff;
+      color: #000;
+      border: 2px solid #000;
+    }
+    .btn-custom:hover,
+    .btn-custom:focus {
+      background-color: #fff;
+      color: #000;
+      border: 2px solid #000;
+    }
+  </style>
+
+{% endblock %}

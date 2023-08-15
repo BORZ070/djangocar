@@ -14,3 +14,5 @@ class Car(models.Model):
     def __str__(self):
         return f'{self.id} // {self.brand}'
 
+
+class manufactured(models.Model)
