@@ -9,4 +9,4 @@ def main_views(request):
 
 def detail_views(request, pk):
     car = Car.objects.get(id=pk)
-    return render(request, 'detail.html', {'car': car})
+    return render(request, 'detail_new.html', {'car': car})

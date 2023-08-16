@@ -15,4 +15,11 @@ class Car(models.Model):
         return f'{self.id} // {self.brand}'
 
 
-class manufactured(models.Model)
+# class Manufacture(models.Model):
+#     country = models.CharField(max_length=50)
+
+# class Body(models.Model):
+#     body_type = models.CharField(max_length=50)
+
+# class Transmision(models.Model):
+#     transmision_type = models.CharField(max_length=50)

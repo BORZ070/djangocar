@@ -1,4 +1,4 @@
-    {% extends 'base.html' %}
+    {% extends 'base_new.html' %}
 {% load static %}
     {% block content %}
 <!-- Page content -->
@@ -19,19 +19,33 @@
               <div class="portfolio-details-slider swiper">
                 <div class="swiper-wrapper align-items-center">
 
-
+                {% if car.photo %}
                   <div class="swiper-slide">
-                    <img src="{{ info.img.url }}" alt="">
+                    <img src="{{ car.photo.url }}" alt="">
                   </div>
+                {% else %}
+                    {% endif %}
 
+                {% if car.photo_2 %}
+                    <div class="swiper-slide">
+                    <img src="{{ car.photo_2.url }}" alt="">
+                    </div>
+                {% else %}
+                    {% endif %}
 
-                    {% for i in info.images.all %}
-                  <div class="swiper-slide">
-                    <img src="{{ i.image.url }}" alt="">
+                {% if car.photo_3 %}
+                      <div class="swiper-slide">
+                    <img src="{{ car.photo_3.url }}" alt="">
                   </div>
-                    {% endfor %}
+                {% else %}
+                    {% endif %}
 
-
+                {% if car.photo_4 %}
+                      <div class="swiper-slide">
+                    <img src="{{ car.photo_4.url }}" alt="">
+                  </div>
+                {% else %}
+                    {% endif %}
 
                 </div>
                 <div class="swiper-pagination"></div>
@@ -40,15 +54,11 @@
 
             <div class="col-lg-4">
               <div class="portfolio-info">
-                <h3>{{ info.title }}</h3>
+                <h3>{{ car.brand }}</h3>
                 <ul>
-                  <li><strong>Тип </strong>: {{ info.cat }}</li>
-                  <li><strong>Цена </strong>: {{ info.price }}</li>
-                  <li><strong>Менеджер </strong>: {{ info.person }} ID: {{ info.person.id }}</li>
-                  <li><strong>Подать </strong> <a href="{% url 'zayavki:zayavka' %}">заявку</a></li>
-
-
-               <a href="{{ request.build_absolute_uri }}">{{ request.build_absolute_uri }}</a>
+                  <li><strong>Модель </strong>: {{ car.model }}</li>
+                  <li><strong>Поколение </strong>: {{ car.generation }}</li>
+                  <li><strong>Информация </strong>: {{ car.info }}</li>
 
 
                 </ul>
@@ -70,36 +80,7 @@
 
 
     <!-- Form Zayavka -->
-      <div class="container">
-          <form action="" method="post">
-                {% csrf_token %}
-             <div class="row">
 
-                 <!-- name field -->
-                  <div class="col-md-6 form-group">
-                      <input type="text" name="name" class="form-control"  placeholder="Your Name" required>
-                  </div>
-
-                 <!-- email field -->
-                  <div class="col-md-6 form-group mt-3 mt-md-0">
-                      <input type="email" class="form-control" name="email"  placeholder="Your Email" required>
-                  </div>
-             </div>
-
-              <!-- question field -->
-             <div class="form-group mt-3">
-                <input type="question" class="form-control" name="question"  placeholder="Your question" required>
-             </div>
-
-              <!-- Hidden field for manager ID-->
-             <input type="hidden" class="form-control" name="manager_id"  placeholder="manager_id" required value="{{ info.person.id }}">
-              <br>
-
-              <!-- Button -->
-              <div class="text-center"><button type="submit" class="btn btn-success" >Send Message</button></div>
-
-          </form>
-      </div>
         <!-- END Form Zayavka --
 <br>
 <br>
