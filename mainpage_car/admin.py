@@ -1,8 +1,12 @@
 from django.contrib import admin
-from mainpage_car.models import Car
+from mainpage_car.models import Car, Manufacture, Body, Transmission
+
 
 class CarAdmin(admin.ModelAdmin):
-    list_display = ('id', 'brand', 'model', 'generation')
+    list_display = ('id', 'brand', 'model', 'generation', 'manufacture', 'body', 'transmission')
     list_display_links = ('brand', 'model')
 
 admin.site.register(Car, CarAdmin)
+admin.site.register(Manufacture)
+admin.site.register(Body)
+admin.site.register(Transmission)
