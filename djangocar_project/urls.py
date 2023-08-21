@@ -7,9 +7,11 @@ from mainpage_car.views import main_views, detail_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('', main_views),
+    path('about/', include('about.urls', namespace='about')),
     path('car/<int:pk>', detail_views),
-    path('', include('mainpage_car.urls', namespace='mainpage_car'))
+    path('', include('mainpage_car.urls', namespace='mainpage_car')),
+
+
 ]
 
 if settings.DEBUG is True:
