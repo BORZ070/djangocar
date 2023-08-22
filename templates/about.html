@@ -1,0 +1,94 @@
+{% extends 'base_new.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- ======= About ======= -->
+      <section id="portfolio-details" class="portfolio-details">
+        <div class="container">
+
+          <h1>О компании</h1>
+
+          <div class="row gy-4">
+
+            <div class="col-lg-8">
+              <div class="portfolio-details-slider swiper">
+                <div class="swiper-wrapper align-items-center">
+
+                  <div class="">
+                    <img src="{% static 'img/about_mainphoto.jpg' %}" alt="">
+                  </div>
+
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="portfolio-info">
+                <h3>PLAZA CAR</h3>
+                <ul>
+                  <li><strong>Год основания </strong>:2023  </li>
+                  <li><strong>Родина компании </strong>:Россия </li>
+
+                    <br>
+                  <li><strong>Информация </strong>: ... </li>
+
+
+
+                </ul>
+              </div>
+              <div class="portfolio-description">
+{#                <h2>This is an example of portfolio detail</h2>#}
+                <p>
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section><!-- End Portfolio Details Section -->
+
+    </main><!-- End #main -->
+
+
+  <!-- ======= Manager list ======= -->
+  <section id="features" class="features">
+    <div class="container">
+      <h1>Наши менеджеры</h1>
+      <div class="row d-flex justify-content-center">
+        {% for manager in managers %}
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="card">
+            <a href=""><img src="{{ manager.photo.url }}" class="card-img-top" alt="..." ></a>
+            <div class="card-body">
+               <h5 class="card-title">{{ manager.name }}</h5>
+            <h5 class="card-title">{{ manager.email }}</h5>
+            <p class="card-text">{{ manager.phone }}</p>
+            <p class="card-text">{{ manager.info|truncatewords:20 }}</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        <div class="col-lg-12 d-flex justify-content-center">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .btn-custom {
+      background-color: #fff;
+      color: #000;
+      border: 2px solid #000;
+    }
+    .btn-custom:hover,
+    .btn-custom:focus {
+      background-color: #fff;
+      color: #000;
+      border: 2px solid #000;
+    }
+  </style>
+
+{% endblock %}

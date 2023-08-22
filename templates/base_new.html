@@ -67,7 +67,7 @@
       <div class="container d-flex align-items-center justify-content-between">
 
         <div class="logo">
-          <h1 class="text-light"><a href="">
+          <h1 class="text-light"><a href="{% url 'mainpage_car:indexpage' %}">
               <span>PLAZA <span class="realty">car</span></span>
           </a></h1>
           <!-- Uncomment below if you prefer to use an image logo -->
@@ -79,7 +79,7 @@
 
             <li><a class="nav-link scrollto" href="{% url 'mainpage_car:indexpage' %}">Главная</a></li>
             <li><a class="nav-link scrollto" href="">Поиск</a></li>
-            <li><a class="nav-link scrollto" href="">О нас</a></li>
+            <li><a class="nav-link scrollto" href="{% url 'about:about' %}">О нас</a></li>
 
 
 {#            <li><a class="nav-link scrollto" href="#services">Services</a></li>#}
@@ -104,8 +104,7 @@
 {#                <li><a href="#">Drop Down 4</a></li>#}
 {#              </ul>#}
 {#            </li>#}
-            <li><a class="nav-link scrollto" href="">Контакты</a></li>
-{#            <li><a class="nav-link scrollto" href="">О компании</a></li>#}
+            <li><a class="nav-link scrollto" href="{% url 'about:contact' %}">Контакты</a></li>
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
