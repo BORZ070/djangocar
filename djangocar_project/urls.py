@@ -10,6 +10,7 @@ urlpatterns = [
     path('about/', include('about.urls', namespace='about')),
     path('car/<int:pk>', detail_views),
     path('', include('mainpage_car.urls', namespace='mainpage_car')),
+    path('search/', include('search.urls', namespace='search'))
 
 
 ]
