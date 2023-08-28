@@ -1,5 +1,3 @@
-x = True
-if x == True:
-    print('true')
-else:
-    print('false')
+x = 10
+x = 5
+print(x)

@@ -11,7 +11,10 @@
 
 
     <form action="" method="get">
-    <input name="text" placeholder="brand">
+    <input name="text" placeholder="brand" value="{{ request.GET.text }}">
+     <input name="body_id" placeholder="body" value="{{ request.GET.body_id }}" >
+      <button type="submit">send
+      </button>
     </form>
 
 
