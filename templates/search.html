@@ -4,7 +4,6 @@
 {% block content %}
 
 
-
   <!-- ======= Features Section ======= -->
   <section id="features" class="features">
     <div class="container">
@@ -12,7 +11,16 @@
 
     <form action="" method="get">
     <input name="text" placeholder="brand" value="{{ request.GET.text }}">
-     <input name="body_id" placeholder="body" value="{{ request.GET.body_id }}" >
+
+
+      <select name="body_id" onchange="this.form.submit()">
+        <option value=""> Тип кузова </option>
+
+        {% for body in bodys %}
+        <option value="{{ body.id }}"> {{body}} </option>
+        {% endfor %}
+      </select>
+
       <button type="submit">send
       </button>
     </form>

@@ -1,11 +1,13 @@
 from django.shortcuts import render
-from mainpage_car.models import Car
+from mainpage_car.models import Car, Body
 
 
 def search_views(request):
 
     query = request.GET.get('text')
     body_type_id = request.GET.get('body_id')
+
+    bodys = Body.objects.all()
 
     if query:
         cars = Car.objects.filter(brand__icontains=query)
@@ -16,8 +18,5 @@ def search_views(request):
         cars = cars.filter(body=body_type_id)
 
 
-    # if body_id !=0:
-    #     cars = cars.filter(body=body_id)
-
-    return render(request, 'search.html', {'cars': cars})
+    return render(request, 'search.html', {'cars': cars, 'bodys':bodys})
 
