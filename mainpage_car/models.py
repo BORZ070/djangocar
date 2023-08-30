@@ -31,6 +31,7 @@ class Car(models.Model):
     brand = models.CharField(max_length=50)
     model = models.CharField(max_length=50)
     generation = models.CharField(max_length=50)
+    price = models.IntegerField(blank=True, null=True)
     info = models.TextField(blank=True, null=True)
     photo = models.ImageField(upload_to='car_image', blank=True, null=True)
     photo_2 = models.ImageField(upload_to='car_image', blank=True, null=True)
