@@ -12,7 +12,6 @@ urlpatterns = [
     path('', include('mainpage_car.urls', namespace='mainpage_car')),
     path('search/', include('search.urls', namespace='search'))
 
-
 ]
 
 if settings.DEBUG is True:
