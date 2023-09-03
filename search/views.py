@@ -23,5 +23,6 @@ def search_views(request):
     if transmission_type_id:
         cars = cars.filter(transmission=transmission_type_id)
 
+
     return render(request, 'search.html', {'cars': cars, 'bodys':bodys, 'brands':brands, 'transmissions':transmissions})
 
