@@ -45,6 +45,21 @@
         {% endfor %}
       </select>
 
+<!--selector country-->
+        <select name="country" onchange="this.form.submit()">
+        <option value=""> Страна </option>
+
+        {% for country in countrys %}
+        <option value="{{ country.id }}"
+            {% if request.GET.country|stringformat:"s" == country.id|stringformat:"s" %} selected {% endif %}> {{ country }}
+        </option>
+        {% endfor %}
+      </select>
+
+      <input name="min" placeholder="min" value="{{request.GET.min}}">
+      <input name="max" placeholder="max" value="{{request.GET.max}}">
+
+
 
       <button type="submit">send
       </button>

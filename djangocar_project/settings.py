@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'mainpage_car',
     'about',
+    'search',
 ]
 
 MIDDLEWARE = [

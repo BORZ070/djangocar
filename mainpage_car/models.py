@@ -1,4 +1,5 @@
 from django.db import models
+from about.models import Manager
 
 class Brand(models.Model):
     brand_name = models.CharField(max_length=50)
@@ -42,6 +43,7 @@ class Car(models.Model):
     manufacture = models.ForeignKey(Manufacture, blank=True, null=True, on_delete=models.PROTECT)
     body = models.ForeignKey(Body, blank=True, null=True, on_delete=models.PROTECT)
     transmission = models.ForeignKey(Transmission, blank=True, null=True, on_delete=models.PROTECT)
+    manager = models.ForeignKey(Manager, blank=True, null=True, on_delete=models.PROTECT)
 
     def __str__(self):
         return f'{self.id} // {self.brand}'

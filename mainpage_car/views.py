@@ -3,7 +3,7 @@ from mainpage_car.models import Car
 
 
 def main_views(request):
-    cars = Car.objects.all()
+    cars = Car.objects.order_by('?')[:6]
     return render(request, 'index_new.html', {'cars': cars})
 
 
