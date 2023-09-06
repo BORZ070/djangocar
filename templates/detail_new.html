@@ -79,6 +79,12 @@
             </div>
 
           </div>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <input name="email" placeholder="Email" type="email">
+        <input name="name" placeholder="Ваше имя">
+        <button type="submit"> send </button>
+    </form>
 
         </div>
       </section><!-- End Portfolio Details Section -->
