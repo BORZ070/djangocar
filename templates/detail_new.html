@@ -49,6 +49,14 @@
 
                 </div>
                 <div class="swiper-pagination"></div>
+
+               <form action="" method="POST">
+        {% csrf_token %}
+        <input name="email" placeholder="Email" type="email">
+        <input name="name" placeholder="Ваше имя">
+        <button type="submit"> send </button>
+    </form>
+
               </div>
             </div>
 
@@ -77,15 +85,7 @@
                 </p>
               </div>
             </div>
-
           </div>
-    <form action="" method="POST">
-        {% csrf_token %}
-        <input name="email" placeholder="Email" type="email">
-        <input name="name" placeholder="Ваше имя">
-        <button type="submit"> send </button>
-    </form>
-
         </div>
       </section><!-- End Portfolio Details Section -->
 
@@ -94,8 +94,26 @@
 
     <!-- Form Zayavka -->
 
-        <!-- END Form Zayavka --
+
 <br>
 <br>
 <br>
+<!-- Подключаем SweetAlert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Проверяем, есть ли сообщение об успешной отправке формы
+    var successMessage = "{{ success_message|default:'' }}";
+
+    if (successMessage) {
+        Swal.fire({
+            title: 'Успех!',
+            text: successMessage,
+            icon: 'success',
+            confirmButtonText: 'OK'
+        });
+    }
+});
+</script>
 {% endblock %}
