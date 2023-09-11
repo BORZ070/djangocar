@@ -15,11 +15,14 @@ def detail_views(request, pk):
     if request.method == 'POST':
         email = request.POST.get('email')
         name = request.POST.get('name')
-        bill = Bill(email=email, name=name)
+        comment = request.POST.get('comment')
+        bill = Bill(email=email, name=name, comment=comment)
         bill.save()
 
         email_subject = 'заявка'
-        message = f'новая заявка от {name}, {email}'
+        message = f'новая заявка от {name}, {email}' \
+                  f'{comment}'
+
         from_email = 'xbox070@yandex.ru'
         email_manager = ['shdgit07@gmail.com']
         send_mail(email_subject, message, from_email, email_manager)
