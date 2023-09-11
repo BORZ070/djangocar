@@ -15,7 +15,7 @@ class Manager(models.Model):
 class Bill(models.Model):
     email = models.EmailField()
     name = models.CharField(max_length=50)
-    comment = models.CharField(max_length=500)
+    comment = models.CharField(max_length=500, blank=True, null=True)
 
     def __str__(self):
         return self.name

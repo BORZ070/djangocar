@@ -16,15 +16,16 @@ def detail_views(request, pk):
         email = request.POST.get('email')
         name = request.POST.get('name')
         comment = request.POST.get('comment')
+        manager_email = car.manager.email
+
         bill = Bill(email=email, name=name, comment=comment)
         bill.save()
 
         email_subject = 'заявка'
-        message = f'новая заявка от {name}, {email}' \
-                  f'{comment}'
+        message = f'новая заявка от {name}, {email}, {comment}'
 
         from_email = 'xbox070@yandex.ru'
-        email_manager = ['shdgit07@gmail.com']
+        email_manager = ['shdgit07@gmail.com', manager_email]
         send_mail(email_subject, message, from_email, email_manager)
         success_message = 'Заявка отправлена!'
 
