@@ -52,9 +52,9 @@
 
                <form action="" method="POST">
         {% csrf_token %}
-        <input name="email" placeholder="Email" type="email">
-        <input name="comment" placeholder="Комментарий">
-        <input name="name" placeholder="Ваше имя">
+        <input name="email" placeholder="Email" type="email" required>
+        <input name="comment" placeholder="Комментарий" type="text" required>
+        <input name="name" placeholder="Ваше имя" type="text" required>
         <button type="submit"> send </button>
     </form>
 

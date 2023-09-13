@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'mainpage_car',
     'about',
     'search',
+    'bills'
 ]
 
 MIDDLEWARE = [
