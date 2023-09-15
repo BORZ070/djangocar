@@ -1,8 +1,12 @@
 from pathlib import Path
+import environ
+
+env = environ.Env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+environ.Env.read_env(BASE_DIR / '.env')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -122,8 +126,8 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 465
-EMAIL_HOST_USER = 'xbox070@yandex.ru'
-EMAIL_HOST_PASSWORD = 'crgniuyybyuwhtsp'
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
 
