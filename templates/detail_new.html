@@ -49,13 +49,13 @@
 
                 </div>
                 <div class="swiper-pagination"></div>
-
+                  <h4>Application form</h4>
                <form action="" method="POST">
         {% csrf_token %}
-        <input name="email" placeholder="Email" type="email" required>
-        <input name="comment" placeholder="Комментарий" type="text" required>
-        <input name="name" placeholder="Ваше имя" type="text" required>
-        <button type="submit"> send </button>
+        <input class="form-control" name="email" placeholder="Email" type="email" required   >
+        <input class="form-control" name="comment" placeholder="Comment" type="text" required>
+        <input class="form-control" name="name" placeholder="Your name" type="text" required>
+        <button class="btn btn-outline-success" type="submit"> send </button>
     </form>
 
               </div>
@@ -65,18 +65,18 @@
               <div class="portfolio-info">
                 <h3>{{ car.brand }}</h3>
                 <ul>
-                  <li><strong>Модель </strong>: {{ car.model }}</li>
-                  <li><strong>Поколение </strong>: {{ car.generation }}</li>
-                  <li><strong>Страна </strong>: {{ car.manufacture }}</li>
-                  <li><strong>Кузов </strong>: {{ car.body }}</li>
-                  <li><strong>КПП </strong>: {{ car.transmission }}</li>
-                  <li><strong>Цена </strong>: {{ car.price }}</li>
+                  <li><strong>Model </strong>: {{ car.model }}</li>
+                  <li><strong>Generation </strong>: {{ car.generation }}</li>
+                  <li><strong>Country </strong>: {{ car.manufacture }}</li>
+                  <li><strong>Body </strong>: {{ car.body }}</li>
+                  <li><strong>Transmission </strong>: {{ car.transmission }}</li>
+                  <li><strong>Price </strong>: {{ car.price }}</li>
 
                     <br>
-                  <li><strong>Информация </strong>: {{ car.info }}</li>
+                  <li><strong>Info </strong>: {{ car.info }}</li>
 
 
-                    <li><strong>Менеджер </strong>: {{ car.manager.name }}: {{ car.manager.phone }}</li>
+                    <li><strong>Manager </strong>: {{ car.manager.name }}, {{ car.manager.phone }}</li>
 
                 </ul>
               </div>

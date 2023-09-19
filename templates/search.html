@@ -48,7 +48,7 @@
 <!--selector brand-->
         <div class="form-group">
       <select class="form-control" name="text" onchange="this.form.submit()">
-        <option value=""> Марка авто </option>
+        <option value=""> Car brand </option>
 
         {% for brand in brands %}
         <option value="{{ brand }}"
@@ -61,7 +61,7 @@
 <!--selector body-->
         <div class="form-group">
       <select class="form-control" name="body_id" onchange="this.form.submit()">
-        <option value=""> Тип кузова </option>
+        <option value=""> Body type </option>
 
         {% for body in bodys %}
         <option value="{{ body.id }}"
@@ -74,7 +74,7 @@
 <!--selector transmission-->
         <div class="form-group">
           <select class="form-control" name="transmission" onchange="this.form.submit()">
-        <option value=""> Тип КПП </option>
+        <option value=""> Transmission type  </option>
 
         {% for transmission in transmissions %}
         <option value="{{ transmission.id }}"
@@ -87,7 +87,7 @@
 <!--selector country-->
         <div class="form-group">
         <select class="form-control" name="country" onchange="this.form.submit()">
-        <option value=""> Страна </option>
+        <option value=""> Country </option>
 
         {% for country in countrys %}
         <option value="{{ country.id }}"
