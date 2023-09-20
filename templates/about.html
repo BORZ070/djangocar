@@ -54,6 +54,7 @@
 
 
   <!-- ======= Manager list ======= -->
+{% load thumbnail %}
   <section id="features" class="features">
     <div class="container">
       <h1>Our managers</h1>
@@ -61,7 +62,7 @@
         {% for manager in managers %}
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
           <div class="card">
-            <a href=""><img src="{{ manager.photo.url }}" class="card-img-top" alt="..." ></a>
+            <img src="{% thumbnail manager.photo 450x600 crop %}" class="card-img-top" alt="..." >
             <div class="card-body">
                <h5 class="card-title">{{ manager.name }}</h5>
             <h6 class="card-title">{{ manager.email }}</h6>
