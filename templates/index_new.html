@@ -46,7 +46,7 @@
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch mb-4">
           <div class="card">
 <!--            <a href="{% url 'mainpage_car:detailpage' car.id %}"><img src="{{ car.photo.url }}" class="card-img-top" alt="..."></a>-->
-            <a href="{% url 'mainpage_car:detailpage' car.id %}"><img src="{% thumbnail car.photo 400x300 crop %}" class="card-img-top" alt="..."></a>
+            <a href="{% url 'mainpage_car:detailpage' car.id %}"><img src="{% thumbnail car.photo 550x375 crop %}" class="card-img-top" alt="..."></a>
             <div class="card-body">
                <h5 class="card-title">{{ car.brand }}</h5>
             <h5 class="card-title">{{ car.model }}</h5>
