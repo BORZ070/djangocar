@@ -22,28 +22,28 @@
 
                 {% if car.photo %}
                   <div class="swiper-slide">
-                    <a href="{{car.photo.url}}"><img src="{% thumbnail car.photo 1320x880 crop %}" alt=""></a>
+                    <a href="{{car.photo.url}}"><img src="{% thumbnail car.photo 1200x800 crop %}" alt=""></a>
                   </div>
                 {% else %}
                     {% endif %}
 
                 {% if car.photo_2 %}
                     <div class="swiper-slide">
-                    <a href="{{car.photo_2.url}}"><img src="{% thumbnail car.photo_2 1320x880 crop %}" alt=""></a>
+                    <a href="{{car.photo_2.url}}"><img src="{% thumbnail car.photo_2 1200x800 crop %}" alt=""></a>
                     </div>
                 {% else %}
                     {% endif %}
 
                 {% if car.photo_3 %}
                       <div class="swiper-slide">
-                    <a href="{{car.photo_3.url}}"><img src="{% thumbnail car.photo_3 1320x880 crop %}" alt=""></a>
+                    <a href="{{car.photo_3.url}}"><img src="{% thumbnail car.photo_3 1200x800 crop %}" alt=""></a>
                   </div>
                 {% else %}
                     {% endif %}
 
                 {% if car.photo_4 %}
                       <div class="swiper-slide">
-                    <a href="{{car.photo_4.url}}"><img src="{% thumbnail car.photo_4 1320x880 crop %}" alt="" ></a>
+                    <a href="{{car.photo_4.url}}"><img src="{% thumbnail car.photo_4 1200x800 crop %}" alt="" ></a>
                   </div>
                 {% else %}
                     {% endif %}
