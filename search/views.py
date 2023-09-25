@@ -3,7 +3,7 @@ from mainpage_car.models import Car, Body, Brand, Transmission, Manufacture
 
 
 def search_views(request):
-
+    title = 'Plaza car | Search'
     query = request.GET.get('text')
     body_type_id = request.GET.get('body_id')
     transmission_type_id = request.GET.get('transmission')
@@ -38,5 +38,5 @@ def search_views(request):
         cars = cars.filter(price__lte=max_price)
 
     return render(request, 'search.html', {'cars': cars, 'bodys':bodys, 'brands':brands, 'transmissions':transmissions,
-                                           'countrys':countrys})
+                                           'countrys':countrys, 'title':title})
 

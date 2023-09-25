@@ -4,8 +4,10 @@ from about.models import Manager
 
 def about_views(request):
     managers = Manager.objects.all()
-    return render(request, 'about.html', {'managers':managers})
+    title = 'Plaza car | About us'
+    return render(request, 'about.html', {'managers':managers, 'title':title})
 
 
 def contact_views(request):
-    return render(request, 'contact.html')
+    title = 'Plaza car | Contacts'
+    return render(request, 'contact.html', {'title':title})

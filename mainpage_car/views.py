@@ -6,7 +6,8 @@ from django.core.mail import send_mail
 
 def main_views(request):
     cars = Car.objects.order_by('?')[:6]
-    return render(request, 'index_new.html', {'cars': cars})
+    title = 'Plaza car'
+    return render(request, 'index_new.html', {'cars': cars, 'title':title})
 
 
 def detail_views(request, pk):
@@ -21,6 +22,7 @@ def detail_views(request, pk):
         bill = Bill(email=email, name=name, comment=comment, manager_email=manager_email)
         bill.save()
         success_message = 'Заявка отправлена!'
-
-    return render(request, 'detail_new.html', {'car': car, 'success_message':success_message})
+    title = f'{car.brand} | {car.model}'
+    return render(request, 'detail_new.html', {'car': car, 'success_message': success_message,
+                                               'title': title})
 
