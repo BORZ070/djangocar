@@ -100,21 +100,21 @@
 <br>
 <br>
 <!-- Подключаем SweetAlert -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<!--<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>-->
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Проверяем, есть ли сообщение об успешной отправке формы
-    var successMessage = "{{ success_message|default:'' }}";
+<!--<script>-->
+<!--document.addEventListener('DOMContentLoaded', function() {-->
+<!--    // Проверяем, есть ли сообщение об успешной отправке формы-->
+<!--    var successMessage = "{{ success_message|default:'' }}";-->
 
-    if (successMessage) {
-        Swal.fire({
-            title: 'Успех!',
-            text: successMessage,
-            icon: 'success',
-            confirmButtonText: 'OK'
-        });
-    }
-});
-</script>
+<!--    if (successMessage) {-->
+<!--        Swal.fire({-->
+<!--            title: 'Успех!',-->
+<!--            text: successMessage,-->
+<!--            icon: 'success',-->
+<!--            confirmButtonText: 'OK'-->
+<!--        });-->
+<!--    }-->
+<!--});-->
+<!--</script>-->
 {% endblock %}
