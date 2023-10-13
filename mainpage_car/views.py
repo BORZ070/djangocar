@@ -1,13 +1,20 @@
 import requests
 from django.shortcuts import render
+
 from mainpage_car.models import Car
 from about.models import Bill
-from django.core.mail import send_mail
+
 import time
+
+
+from django.core.mail import send_mail
+import asyncio
+
 
 def main_views(request):
     cars = Car.objects.order_by('?')[:6]
     title = 'Plaza car'
+    # time.sleep(2)
     data = requests.get('https://www.cbr-xml-daily.ru/latest.js').json()
     usd_rate = data['rates']['USD']
     rate = round(1/usd_rate, 2)
