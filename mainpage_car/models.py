@@ -49,5 +49,11 @@ class Car(models.Model):
         return f'{self.id} // {self.brand}'
 
 
+class RateUSD(models.Model):
+    rate = models.FloatField()
+
+    # def __str__(self):
+        # return self.rate
+
 
 

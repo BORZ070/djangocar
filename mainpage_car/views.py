@@ -1,7 +1,7 @@
 import requests
 from django.shortcuts import render
 
-from mainpage_car.models import Car
+from mainpage_car.models import Car, RateUSD
 from about.models import Bill
 
 import time
@@ -18,6 +18,14 @@ def main_views(request):
     data = requests.get('https://www.cbr-xml-daily.ru/latest.js').json()
     usd_rate = data['rates']['USD']
     rate = round(1/usd_rate, 2)
+    # save_rate_database
+    kurs = RateUSD.objects.last()
+    kurs.rate = rate
+    kurs.save()
+    # load rate from database
+    
+
+
     return render(request, 'index_new.html', {'cars': cars, 'title':title, 'rate':rate})
 
 

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from mainpage_car.models import Car, Manufacture, Body, Transmission, Brand
+from mainpage_car.models import Car, Manufacture, Body, Transmission, Brand, RateUSD
 
 
 class CarAdmin(admin.ModelAdmin):
@@ -11,3 +11,4 @@ admin.site.register(Brand)
 admin.site.register(Manufacture)
 admin.site.register(Body)
 admin.site.register(Transmission)
+admin.site.register(RateUSD)
