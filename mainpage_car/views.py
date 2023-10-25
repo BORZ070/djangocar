@@ -23,10 +23,9 @@ def main_views(request):
     kurs.rate = rate
     kurs.save()
     # load rate from database
-    
+    kurs_from_db = RateUSD.objects.last()
 
-
-    return render(request, 'index_new.html', {'cars': cars, 'title':title, 'rate':rate})
+    return render(request, 'index_new.html', {'cars': cars, 'title':title, 'rate':kurs_from_db.rate})
 
 
 def detail_views(request, pk):
@@ -42,6 +41,9 @@ def detail_views(request, pk):
         bill.save()
         success_message = 'Заявка отправлена!'
     title = f'{car.brand} | {car.model}'
+
+    kurs_from_db = RateUSD.objects.last()
+
     return render(request, 'detail_new.html', {'car': car, 'success_message': success_message,
-                                               'title': title})
+                                               'title': title, 'rate':kurs_from_db.rate})
 

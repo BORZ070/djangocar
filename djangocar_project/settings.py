@@ -33,7 +33,12 @@ INSTALLED_APPS = [
     'mainpage_car',
     'about',
     'search',
-    'bills'
+    'bills',
+    'django_q',
+    'django_extensions',
+
+
+
 ]
 
 MIDDLEWARE = [
@@ -138,6 +143,15 @@ EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
 
 
-
+Q_CLUSTER = {
+    'name': 'DjangORM',
+    'workers': 4,
+    'retry': 600,
+    'timeout': 500,
+    'queue_limit': 50,
+    'bulk': 10,
+    'orm': 'default',
+    'catch_up': False,
+}
 
 

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from mainpage_car.models import Car, Body, Brand, Transmission, Manufacture
+from mainpage_car.models import Car, Body, Brand, Transmission, Manufacture, RateUSD
 
 
 def search_views(request):
@@ -37,6 +37,9 @@ def search_views(request):
     if max_price:
         cars = cars.filter(price__lte=max_price)
 
+    kurs_from_db = RateUSD.objects.last()
+
+
     return render(request, 'search.html', {'cars': cars, 'bodys':bodys, 'brands':brands, 'transmissions':transmissions,
-                                           'countrys':countrys, 'title':title})
+                                           'countrys':countrys, 'title':title, 'rate':kurs_from_db.rate})
 
