@@ -28,3 +28,5 @@ __pycache__/
 *.iws
 
 venv/
+
+requirements_old.txt
